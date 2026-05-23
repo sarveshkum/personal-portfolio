@@ -1,29 +1,30 @@
 import { motion } from 'framer-motion';
-import { Terminal, Cpu, Layers } from 'lucide-react';
+import { ShieldCheck, BrainCircuit, Network } from 'lucide-react';
 import './About.css';
 
 const About = () => {
     const highlightFeatures = [
         {
-            icon: <Terminal size={24} className="accent-blue" />,
-            title: "Backend Engineering",
-            description: "Architecting reliable and high-performance server-side applications using Node.js, Express, and NestJS."
+            icon: <ShieldCheck size={24} className="accent-blue" />,
+            title: "AI Security Engineering",
+            description: "Building secure AI systems focused on fraud detection, anomaly detection, threat intelligence, and intelligent security workflows."
         },
         {
-            icon: <Layers size={24} className="accent-cyan" />,
-            title: "Scalable Architectures",
-            description: "Designing systems that gracefully handle increasing loads, focusing on robust database schemas and modularity."
+            icon: <Network size={24} className="accent-cyan" />,
+            title: "Scalable Secure Systems",
+            description: "Designing scalable backend architectures and production-ready systems with reliability, authentication, and real-time processing."
         },
         {
-            icon: <Cpu size={24} className="accent-purple" />,
-            title: "Applied Machine Learning",
-            description: "Integrating ML models, NLP pipelines, and OCR engines into production-ready software systems."
+            icon: <BrainCircuit size={24} className="accent-purple" />,
+            title: "Machine Learning & Intelligence",
+            description: "Developing NLP pipelines, Transformer models, speech intelligence systems, and real-world AI applications."
         }
     ];
 
     return (
         <section className="section container" id="about">
             <div className="section-header">
+
                 <motion.h2
                     className="heading-lg"
                     initial={{ opacity: 0, y: 20 }}
@@ -33,6 +34,7 @@ const About = () => {
                 >
                     About Me
                 </motion.h2>
+
                 <motion.div
                     className="section-line"
                     initial={{ width: 0 }}
@@ -40,9 +42,11 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 ></motion.div>
+
             </div>
 
             <div className="about-content">
+
                 <motion.div
                     className="about-text glass-panel"
                     initial={{ opacity: 0, x: -30 }}
@@ -51,34 +55,51 @@ const About = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <p>
-                        I am a Software Engineer based in Coimbatore, India, specializing in Backend Systems and AI/ML Architectures.
-                        My engineering philosophy centers around first-principles thinking: breaking down complex problems and building robust, scalable solutions from the ground up.
+                        I am <strong>Sarvesh Kumar S S</strong>, an AI Security Engineer and Machine Learning enthusiast based in Coimbatore, India. I specialize in developing intelligent systems that combine Artificial Intelligence, Cybersecurity, and scalable software engineering.
                     </p>
+
                     <p>
-                        With a strong foundation in modern backend technologies and applied machine learning, I have developed intelligent systems ranging from AI-powered fraud detection to medical document processing and rule-based proctoring.
+                        My experience includes designing and implementing AI-powered fraud detection systems, intelligent threat analysis platforms, speech processing applications, and secure backend architectures. I focus on solving real-world challenges using data-driven approaches and intelligent technologies.
                     </p>
+
                     <p>
-                        I am passionate about bridging the gap between cutting-edge AI research and real-world software engineering, ensuring system reliability, performance optimization, and seamless user experiences.
+                        I am passionate about building secure AI systems that bridge the gap between advanced research and practical deployment while ensuring reliability, performance optimization, and seamless user experiences.
                     </p>
+
                 </motion.div>
 
                 <div className="about-highlights">
+
                     {highlightFeatures.map((feature, idx) => (
+
                         <motion.div
                             key={idx}
                             className="highlight-card glass-panel"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.2 + (idx * 0.1) }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 0.2 + (idx * 0.1)
+                            }}
                         >
+
                             <div className="highlight-icon">
                                 {feature.icon}
                             </div>
-                            <h3 className="highlight-title">{feature.title}</h3>
-                            <p className="highlight-desc text-secondary">{feature.description}</p>
+
+                            <h3 className="highlight-title">
+                                {feature.title}
+                            </h3>
+
+                            <p className="highlight-desc text-secondary">
+                                {feature.description}
+                            </p>
+
                         </motion.div>
+
                     ))}
+
                 </div>
             </div>
         </section>
