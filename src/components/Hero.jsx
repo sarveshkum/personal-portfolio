@@ -33,7 +33,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                    Backend Systems | AI/ML Architectures
+                    Backend Systems | AI/ML Architectures | AI Security
                 </motion.h2>
 
                 <motion.p
